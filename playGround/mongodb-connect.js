@@ -23,18 +23,18 @@ MongoClient.connect("mongodb://localhost:27017", (err, client) => {
   //       console.log(JSON.stringify(result.ops, undefined, 2));
   //     }
   //   );
-    // var objects = [];
-    // for (let index = 0; index < 100000; index++) {
-    //   objects.push({
-    //     text: "another todo " + index,
-    //     completed: true
-    //   });
-    // }
-    // todos.insertMany(objects, result => {
-    //   console.log("done");
-    // });
-  todos
-    .count()
-    .then(number => console.log(number));
+    var objects = [];
+    for (let index = 0; index < 100000; index++) {
+      objects.push({
+        text: "another todo " + index,
+        completed: true
+      });
+    }
+    todos.insertMany(objects, result => {
+      console.log("done");
+    });
+//   todos
+//     .count()
+//     .then(number => console.log(number));
 //   client.close();
 });
